@@ -1,0 +1,75 @@
+<div class="cont_principal">
+  <div class="navbars">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <button (click)="Characters()" class="mybytton btn btn-outline-dark">Characters</button>
+      <button (click)="Students()" class="mybytton btn btn-outline-dark">Students</button>
+      <button (click)="Staff()" class="mybytton btn btn-outline-dark">Staff</button>
+      <select (click)="Change()" [(ngModel)]="home" class="mybytton">
+        <option></option>
+        <option>Gryffindor</option>
+        <option>Slytherin</option>
+        <option>Hufflepuff</option>
+        <option>Ravenclaw</option>
+      </select>
+    </nav>
+  </div>
+  <div class="elems" *ngFor="let character of characters; index as i"> 
+    <div class="cont_modal cont_modal_active">
+      <div class="cont_photo">
+        <div class="cont_img_back">
+          <img class="picture" src="{{character.image}}" alt="" />
+        </div>
+        <div class="cont_detalles">
+          <h3>{{character.name}}</h3>
+        </div>
+      </div>
+      <div class="cont_text_ingredients">
+        <div class="cont_tabs">
+          <h4 class="some">INFO</h4>
+        </div>
+        <div class="cont_text_det_preparation">
+          <div class="mydiv">
+            <div class="cont_title_preparation">
+              <p>Name:</p>
+            </div>
+            <div class="cont_info_preparation">
+              <p>{{character.name}}</p>
+            </div>
+            <div class="cont_title_preparation">
+              <p>Gender:</p>
+            </div>
+            <div class="cont_info_preparation">
+              <p>{{character.gender}}</p>
+            </div>         
+            <div class="cont_title_preparation">
+              <p>Birthdate:</p>
+            </div>
+            <div class="cont_info_preparation">
+              <p>{{character.dateOfBirth}}</p>
+            </div>        
+          </div>
+          <div class="mydiv">
+            <div class="cont_title_preparation">
+              <p>Species:</p>
+            </div>
+            <div class="cont_info_preparation">
+              <p>{{character.species}}</p>
+            </div>  
+            <div class="cont_title_preparation">
+              <p>House:</p>
+            </div>
+            <div class="cont_info_preparation">
+              <p>{{character.house}}</p>
+            </div>
+            <div class="cont_title_preparation">
+              <p>Patronus:</p>
+            </div>
+            <div class="cont_info_preparation">
+              <p>{{character.patronus}}</p>
+            </div>          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
